@@ -91,12 +91,51 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 
         - CODE EXAMPLE: shared credentials file
             - default location of AWS cred file is `$HOME/.aws/credentials`
+            - Terraform provider code for AWS:
 
                     provider "aws" {
                     region                  = "us-west-2"
                     shared_credentials_file = "/Users/tf_user/.aws/creds"
                     profile                 = "customprofile"
                     }
+
+        3. checkout:  4-step Terraform work flow to show that environment is setup correctly:
+            -  `terraform init`
+            -  `terraform plan`
+            -  `terraform apply`
+            -  `terraform destroy`
+                - detailed checkout steps
+                    1. `touch main.tf`
+                    2. boiler plate code to deploy a single ec2:
+
+                        terraform {
+                            required_providers {
+                                aws = {
+                                source  = "hashicorp/aws"
+                                version = "~> 3.27"
+                                }
+                            }
+
+                            required_version = ">= 0.14.9"
+                            }
+
+                            provider "aws" {
+                            profile = "default"
+                            region  = "us-east-2"
+                            }
+
+                            resource "aws_instance" "app_server" {
+                            ami           = "ami-00399ec92321828f5"
+                            instance_type = "t2.micro"
+
+                            tags = {
+                                Name = "ExampleAppServerInstance"
+                            }
+                        }
+
+
+
+
 
                 
 
