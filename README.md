@@ -83,9 +83,9 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
                     $ export AWS_SECRET_ACCESS_KEY="asecretkey"
                     $ export AWS_DEFAULT_REGION="us-west-2"
 
-            - configure TF provider in code
+            - configure TF provider in code:
 
-                provider "aws" {}
+                `provider "aws" {}`
 
             - `terraform plan`
 
