@@ -68,6 +68,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
         - CodeBuild, ECS, EKS roles
         - EC2 Instnace Metadata Service (MDS and IMDSv2)
         - CODE EXAMPLE: static
+        
                 ```
                 provider "aws" {
                 region     = "us-west-2"
