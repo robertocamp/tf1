@@ -159,11 +159,31 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 
 > For highly-available networking, you need to have at least 2 availability zone to put your resources in
 
+> When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16
 
+>The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses).
 
+> **subnet networking in VPC**: 
+- The CIDR block of a subnet can be the same as the CIDR block for the VPC (for a single subnet in the VPC), or a subset of the CIDR block for the VPC (for multiple subnets).
+- The allowed block size is between a /28 netmask and /16 netmask.
+- If you create more than one subnet in a VPC, the CIDR blocks of the subnets cannot overlap.
 
+> Example network design:
+- VPC with CIDR block, 10.0.0.0/20
+- 10.0.0.0/23 — public subnet 1a — 512 IP Address
+- 10.0.2.0/23 — public subnet 1b — 512 IP Address
+- 10.0.4.0/23 — public subnet 1c — 512 IP Address
+- 10.0.10.0/23 — private subnet 1a — 512 IP Address
+- 10.0.12.0/23 — private subnet 1b — 512 IP Address
+- 10.0.14.0/23 — private subnet 1c — 512 IP Address
 
+> AWS subnet restrictions with VPC networking: you CANNOT use these IPs (exmpmle network 10.0.0.0/23)
 
+-  network address (10.0.0.0)
+-  network gateway (10.0.0.1)
+-  The IP address of the DNS server is always the base of the VPC network range plus two; however AWS also reserves the base of each subnet "plus two" (10.0.0.2)
+-  10.0.0.3: Reserved by AWS for future use.
+-  *subnet broadcast address* 10.0.1.255: AWS does not support broadcast in a VPC, therefore AWS reserves this address.
 
 
 
