@@ -61,7 +61,19 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
                 resource "aws_vpc" "example" {
                 cidr_block = "10.0.0.0/16"
                 }
-    2. credentials
+    2. credentials: supported methods
+        - static **hard coding credentials is not recommended**
+        - environment variables
+        - shared credentials/configuration file
+        - CodeBuild, ECS, EKS roles
+        - EC2 Instnace Metadata Service (MDS and IMDSv2)
+        - CODE EXAMPLE: static
+                provider "aws" {
+                region     = "us-west-2"
+                access_key = "my-access-key"
+                secret_key = "my-secret-key"
+                }
+
 
 
 
