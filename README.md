@@ -89,6 +89,15 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 
             - `terraform plan`
 
+        - CODE EXAMPLE: shared credentials file
+            - default location of AWS cred file is `$HOME/.aws/credentials`
+
+                    provider "aws" {
+                    region                  = "us-west-2"
+                    shared_credentials_file = "/Users/tf_user/.aws/creds"
+                    profile                 = "customprofile"
+                    }
+
                 
 
 
