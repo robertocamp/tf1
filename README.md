@@ -108,6 +108,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
                     1. `touch main.tf`
                     2. boiler plate code to deploy a single ec2:
 
+                        ```
                         terraform {
                             required_providers {
                                 aws = {
@@ -132,7 +133,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
                                 Name = "ExampleAppServerInstance"
                             }
                         }
-
+                        ```
 
 
 
