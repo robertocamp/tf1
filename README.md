@@ -11,9 +11,11 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 - MySQL
 - WordPress
  
-### WordPress Deployment Using Terrform
+### WordPress Deployment Using Terraform
 #### AWS CLI profiles
-- 
+
+> A "profile" in the AWS CLI configuration is a collection of credentials and parameters that govern now the AWS CLI command(s) are delivered to AWS. The "default" profile gets configured automaticially  and additoinal profiles can be added to the `config` and `credentials` files
+
 #### Terraform environment setup: MacBook Pro
 1. use the 'brew' package manager to install the basic packages
 - `brew install awscli`
@@ -103,6 +105,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
             -  `terraform init`
             -  `terraform plan`
             -  `terraform apply`
+            -   `terraform show`
             -  `terraform destroy`
                 - detailed checkout steps
                     1. `touch main.tf`
@@ -134,6 +137,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
                             }
                         }
                         ```
+                    3. peform terraform work flow
 
 
 
@@ -255,3 +259,7 @@ https://learn.hashicorp.com/tutorials/terraform/eks
 #### AWS CLI
 
 https://www.youtube.com/watch?v=PWAnY-w1SGQ
+
+
+
+
