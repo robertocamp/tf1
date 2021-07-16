@@ -202,6 +202,17 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 - IG provides a target in your VPC route tables for internet-routable traffic 
 - performs network address translation (NAT) for instances that have been assigned public IPv4 addresses
 
+##### NAT gateway
+>  network address translation (NAT) gateway enables instances in a private subnet to connect to the internet or other AWS services
+
+- Internet traffic is prevented from initiating connections with instnaces behind a NAT gateway
+- AWS NAT gateway hourly usage and data processing rates apply!
+- NAT gateways are not supported for IPv6 traffic—use an outbound-only (egress-only) internet gateway instead
+- Nat GW should be located on a *public subnet*
+- You must associate an elastic IP for NAT GW.
+
+> NOTE: If you have resources in multiple Availability Zones and they share one NAT gateway, in the event that the NAT gateway’s Availability Zone is down, resources in the other Availability Zones lose internet access. To create an Availability Zone-independent architecture, create a NAT gateway in each Availability Zone and configure your routing to ensure that resources use the NAT gateway in the same Availability Zone.
+
 
  ## Using "Let's Encrypt For SSL
 
