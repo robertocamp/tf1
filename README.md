@@ -142,7 +142,22 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 
 
 
-                
+ #### AWS VPC
+ > Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.  You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
+
+ > AWS VPC constructs:
+- subnets
+- route tables
+- Internet Gateways
+- Egress-Only Internet Gateways
+- DHCP Option Sets
+- DNS
+- Elastic IP address
+- VPC Endpoints
+- NAT
+- VPC Peering
+
+> For highly-available networking, you need to have at least 2 availability zone to put your resources in
 
 
 
