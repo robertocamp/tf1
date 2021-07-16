@@ -32,6 +32,12 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
         - config
         - credentials
     > the AWS CLI creates a "profile" with these two configuration files. A profile is a collection of settings and credentials that you can apply to an AWS CLI command. There will always be a "default" profile and additonal profiles can be setup in these files and used with the AWS CLI. To use a profile other than default, pass in the **--profile** option with the AWS CLI command.
+    6. **ALTERNATE METHOD:  ENVIRONMENT VARIABLES**
+    ```
+    export AWS_ACCESS_KEY_ID=access_key_string
+    export AWS_SECRET_ACCESS_KEY=secret_access_key_string
+    export AWS_DEFAULT_REGION=region_string
+    ```
 
 
 
