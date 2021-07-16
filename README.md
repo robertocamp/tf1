@@ -5,21 +5,44 @@
 ```
 You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPress  projects.  A lot of development hours are lost  to perform WordPress setup with all dependencies like PHP, MySQL, etc. The Company wants  to automate it with the help of a configuration management tool so that they can follow a standard installation procedure for WordPress and its components whenever a new requirement or client comes in. The below mentioned components should be included:
 ```
-x
+
 - PHP
 - Nginx/Apache Web Server
 - MySQL
 - WordPress
  
 ### WordPress Deployment Using Terrform
+#### AWS CLI profiles
+- 
 #### Terraform environment setup: MacBook Pro
 1. use the 'brew' package manager to install the basic packages
 - `brew install awscli`
-- `brew install jq` (*helps to work with json data ; not strictly necessary though*)
+- `brew install jq` (*helps when working with json data ; not strictly necessary though*)
 - `brew install terraform`
 
 2. AWS credentials: Terraform depends on the AWS CLI being installed and setup correctly
-    1. `aws configure`
+    1. create or use an IAM user for Terraform administration (don't use `root` account)
+    2. create Access Key for this user
+    3. run the `aws configure` command (this is the AWS CLI in action!)
+        - promted for AWS Access Key
+        - prompted for Secret 
+        - **these items come from 'step2` above --create access key**
+    4. this process will create a .aws folder in your workstation account
+    5. the .aws folder contains 2 files :
+        - config
+        - credentials
+    > the AWS CLI creates a "profile" with these two configuration files. A profile is a collection of settings and credentials that you can apply to an AWS CLI command. There will always be a "default" profile and additonal profiles can be setup in these files and used with the AWS CLI.
+
+
+
+
+
+
+
+
+
+
+
  ## Using "Let's Encrypt For SSL
 
 - typically DNS will resolve an IP address to an "A" Record
@@ -119,3 +142,8 @@ https://www.padok.fr/en/blog/aws-eks-cluster-terraform
 #### Terraform AWS EKS
 
 https://learn.hashicorp.com/tutorials/terraform/eks
+
+
+#### AWS CLI
+
+https://www.youtube.com/watch?v=PWAnY-w1SGQ
