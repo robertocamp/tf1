@@ -143,6 +143,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 
 
  #### AWS VPC
+ ##### VPC overview
  > Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.  You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
 
  > AWS VPC constructs:
@@ -163,8 +164,9 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 
 >The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses).
 
-> **subnet networking in VPC**: 
-- The CIDR block of a subnet can be the same as the CIDR block for the VPC (for a single subnet in the VPC), or a subset of the CIDR block for the VPC (for multiple subnets).
+##### subnet networking in VPC
+> The CIDR block of a subnet can be the same as the CIDR block for the VPC (for a single subnet in the VPC), or a subset of the CIDR block for the VPC (for multiple subnets).
+
 - The allowed block size is between a /28 netmask and /16 netmask.
 - If you create more than one subnet in a VPC, the CIDR blocks of the subnets cannot overlap.
 
@@ -187,7 +189,18 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 
 
 
+##### VPC routetables: A *route table* contains a set of rules, called routes, that are used to determine where network traffic is directed.
 
+- Each subnet in your VPC must be associated with a route table; the table controls the routing for the subnet
+- A subnet can only be associated with one route table at a time
+- you can associate multiple subnets with the same route table
+
+##### Internet Gateway
+
+> An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between instances in your VPC and the internet.
+
+- IG provides a target in your VPC route tables for internet-routable traffic 
+- performs network address translation (NAT) for instances that have been assigned public IPv4 addresses
 
 
  ## Using "Let's Encrypt For SSL
@@ -199,7 +212,6 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
     - AWS LB
     - EC2 instance
     - Kubernetes ingress controller
-
 
 ### Let's Encrypt: Theory
 - uses a public key and validates our www site via a set of challenges
