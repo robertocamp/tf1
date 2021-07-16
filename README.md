@@ -62,7 +62,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
                 cidr_block = "10.0.0.0/16"
                 }
     2. credentials: supported methods
-        - static **hard coding credentials is not recommended**
+        - static:  **hard coding credentials is not recommended**
         - environment variables
         - shared credentials/configuration file
         - CodeBuild, ECS, EKS roles
@@ -75,6 +75,19 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
                 access_key = "my-access-key"
                 secret_key = "my-secret-key"
                 }
+        - CODE EXMAPLE: environment
+            - set environment variables in shell
+
+                $ export AWS_ACCESS_KEY_ID="anaccesskey"
+                $ export AWS_SECRET_ACCESS_KEY="asecretkey"
+                $ export AWS_DEFAULT_REGION="us-west-2"
+
+            - configure TF provider in code
+
+                provider "aws" {}
+
+            - `terraform plan`
+
                 
 
 
