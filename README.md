@@ -31,7 +31,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
     5. the .aws folder contains 2 files :
         - config
         - credentials
-    > the AWS CLI creates a "profile" with these two configuration files. A profile is a collection of settings and credentials that you can apply to an AWS CLI command. There will always be a "default" profile and additonal profiles can be setup in these files and used with the AWS CLI.
+    > the AWS CLI creates a "profile" with these two configuration files. A profile is a collection of settings and credentials that you can apply to an AWS CLI command. There will always be a "default" profile and additonal profiles can be setup in these files and used with the AWS CLI. To use a profile other than default, pass in the **--profile** option with the AWS CLI command.
 
 
 
