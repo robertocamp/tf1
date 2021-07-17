@@ -20,7 +20,7 @@ You are a DevOps engineer at XYZ Ltd. Your company is working mostly on WordPres
 1. use the 'brew' package manager to install the basic packages
 - `brew install awscli`
 - `brew install jq` (*helps when working with json data ; not strictly necessary though*)
-- `brew install terraform`
+- `brew install terraform` 
 
 2. AWS credentials: Terraform depends on the AWS CLI being installed and setup correctly
     1. create or use an IAM user for Terraform administration (don't use `root` account)
